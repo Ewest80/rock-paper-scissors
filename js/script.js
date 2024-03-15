@@ -43,6 +43,23 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function displaySummary(playerScore, computerScore, tieScore) {
+    if (playerScore > computerScore) {
+        console.log('Congratulations! You won the game!');
+    }
+    else if (playerScore < computerScore) {
+        console.log('You lose the game, better luck next time!');
+    }
+    else {
+        console.log(`What a game! It's a tie!`);
+    }
+
+    console.log('Final Score:');
+    console.log(`Player: ${playerScore}`);
+    console.log(`Computer: ${computerScore}`);
+    console.log(`Ties: ${tieScore}`);
+}
+
 function playGame() {
     const rounds = 5;
     let playerScore = 0;
@@ -78,6 +95,7 @@ function playGame() {
         console.log(`\n`);
     }
 
+    displaySummary(playerScore, computerScore, tieScore);
 }
 
 playGame();
