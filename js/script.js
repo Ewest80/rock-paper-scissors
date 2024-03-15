@@ -27,3 +27,24 @@ function getComputerSelection() {
     let randomIndex = Math.floor(Math.random() * 3);
     return choices[randomIndex];
 }
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        return `It's a Tie! Both players chose ${playerSelection}.`;
+    }
+    else if (playerSelection === 'rock') {
+        return computerSelection === 'scissors' ? 'You Win! Rock beats Scissors.' : 'You Lose! Paper beats Rock.';
+    }
+    else if (playerSelection === 'paper') {
+        return computerSelection === 'rock' ? 'You Win! Paper beats Rock.' : 'You Lose! Scissors beats Paper.';
+    }
+    else if (playerSelection === 'scissors') {
+        return computerSelection === 'paper' ? 'You Win! Scissors beats Paper.' : 'You Lose! Rock beats Scissors.';
+    }
+}
+
+function playGame() {
+    console.log(playRound(getPlayerSelection(), getComputerSelection()));
+}
+
+playGame();
