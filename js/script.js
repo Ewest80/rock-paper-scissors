@@ -22,3 +22,8 @@ function isSelectionValid(selection) {
     return choice === 'rock' || choice === 'paper' || choice === 'scissors';
 }
 
+function getComputerSelection() {
+    const choices = ['rock', 'paper', 'scissors'];
+    let randomIndex = Math.floor(Math.random() * 3);
+    return choices[randomIndex];
+}
