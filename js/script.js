@@ -44,7 +44,40 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function playGame() {
-    console.log(playRound(getPlayerSelection(), getComputerSelection()));
+    const rounds = 5;
+    let playerScore = 0;
+    let computerScore = 0;
+    let tieScore = 0;
+
+    console.log("Welcome to Rock, Paper, Scissors!");
+    for (let i = 0; i < rounds; i++) {
+        const playerSelection = getPlayerSelection();
+        const computerSelection = getComputerSelection();
+
+        // Prevent the game from continuing if the player canceled the game
+        if (playerSelection === undefined) {
+            return;
+        }
+
+        const result = playRound(playerSelection, computerSelection);
+        if (result.includes('Win')) {
+            playerScore++;
+        }
+        else if (result.includes('Lose')) {
+            computerScore++;
+        }
+        else {
+            tieScore++;
+        }
+
+        console.log(`Round ${i + 1}:`);
+        console.log(result);
+        console.log(`Player Score: ${playerScore}`);
+        console.log(`Computer Score: ${computerScore}`);
+        console.log(`Ties: ${tieScore}`);
+        console.log(`\n`);
+    }
+
 }
 
 playGame();
