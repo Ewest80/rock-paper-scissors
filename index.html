@@ -16,47 +16,58 @@
       </div>
     </header>
 
-    <section class="score-section">
-      <div class="container-sm">
-        <h2>Score</h2>
-        <div class="score-container">
-          <div class="score-info">
-            <h3>Player</h3>
-            <p class="score">0</p>
-          </div>
-          <div class="round-info">
-            <h3>Round</h3>
-            <p class="score">1</p>
-          </div>
-          <div class="score-info">
-            <h3>Computer</h3>
-            <p class="score">0</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="game-area">
+    <!-- Score Board -->
+    <section class="score-board">
       <div class="container">
-        <div class="player-actions">
-          <button class="btn play-btn">R</button>
-          <button class="btn play-btn">P</button>
-          <button class="btn play-btn">S</button>
+        <div class="player">
+          <h2 class="player-name">Player Score</h2>
+          <p id="playerScore" class="player-score">0</p>
         </div>
-
-        <div class="game-display">
-          <div class="results">
-            <p class="chosen-action"></p>
-            <p class="versus">vs</p>
-            <p class="chosen-action"></p>
-          </div>
-          <div class="round-info">
-            <p>Player Wins!</p>
-          </div>
+        <div class="round">
+          <h2 class="round-text">Round</h2>
+          <p id="roundNumber" class="round-number">1</p>
+        </div>
+        <div class="computer">
+          <h2 class="computer-name">Computer Score</h2>
+          <p id="computerScore" class="computer-score">0</p>
         </div>
       </div>
     </section>
 
+    <!-- Game and Round Info -->
+    <section class="game-info">
+      <div class="container">
+        <p id="gameInfo" class="game-info-text">Make your move!</p>
+      </div>
+    </section>
+
+    <!-- Player and Computer Selections -->
+    <section class="game-selections">
+      <div class="container">
+        <div class="player-btns">
+          <button id="rockBtn" class="selection-btn"></button>
+          <button id="paperBtn" class="selection-btn"></button>
+          <button id="scissorsBtn" class="selection-btn"></button>
+        </div>
+
+        <div class="computer-btns">
+          <button id="rockBtnCPU" class="selection-btn"></button>
+          <button id="paperBtnCPU" class="selection-btn"></button>
+          <button id="scissorsBtnCPU" class="selection-btn"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game over and reset -->
+    <section class="game-over">
+      <div class="container">
+        <h3>Game Over!</h3>
+        <p id="gameOverText"></p>
+        <button id="resetBtn" class="reset-btn">Play Again</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <p>Copyright &copy; WestWebDev</p>
