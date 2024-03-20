@@ -12,22 +12,22 @@
   <body>
     <header class="header">
       <div class="container">
-        <h1>Rock - Paper - Scissors!</h1>
+        <h1><span>R</span>ock - <span>P</span>aper - <span>S</span>cissors<span>!</span></h1>
       </div>
     </header>
 
     <!-- Score Board -->
     <section class="score-board">
-      <div class="container">
-        <div class="player">
+      <div class="container-sm">
+        <div class="card score-board-card">
           <h2 class="player-name">Player Score</h2>
           <p id="playerScore" class="player-score">0</p>
         </div>
-        <div class="round">
+        <div class="card score-board-card-sm">
           <h2 class="round-text">Round</h2>
           <p id="roundNumber" class="round-number">1</p>
         </div>
-        <div class="computer">
+        <div class="card score-board-card">
           <h2 class="computer-name">Computer Score</h2>
           <p id="computerScore" class="computer-score">0</p>
         </div>
@@ -45,21 +45,21 @@
     <section class="game-selections">
       <div class="container">
         <div class="player-btns">
-          <button id="rockBtn" class="selection-btn"></button>
-          <button id="paperBtn" class="selection-btn"></button>
-          <button id="scissorsBtn" class="selection-btn"></button>
+          <button id="rockBtn" class="selection-btn">✊</button>
+          <button id="paperBtn" class="selection-btn">✋</button>
+          <button id="scissorsBtn" class="selection-btn">✌️</button>
         </div>
 
         <div class="computer-btns">
-          <button id="rockBtnCPU" class="selection-btn"></button>
-          <button id="paperBtnCPU" class="selection-btn"></button>
-          <button id="scissorsBtnCPU" class="selection-btn"></button>
+          <button id="rockBtnCPU" class="selection-btn">✊</button>
+          <button id="paperBtnCPU" class="selection-btn">✋</button>
+          <button id="scissorsBtnCPU" class="selection-btn">✌️</button>
         </div>
       </div>
     </section>
 
     <!-- Game over and reset -->
-    <section class="game-over">
+    <section class="game-over hidden">
       <div class="container">
         <h3>Game Over!</h3>
         <p id="gameOverText"></p>
