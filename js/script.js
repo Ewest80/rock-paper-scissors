@@ -5,6 +5,7 @@ let rounds = 1;
 const rockBtn = document.querySelector('#rockBtn');
 const paperBtn = document.querySelector('#paperBtn');
 const scissorsBtn = document.querySelector('#scissorsBtn');
+const resetBtn = document.querySelector('#resetBtn');
 const buttons = document.querySelectorAll('.selectable-btn');
 let gameInfo = document.querySelector('#gameInfo');
 let playerScoreDisplay = document.querySelector('#playerScore');
@@ -16,6 +17,7 @@ const gameOverText = document.querySelector('#gameOverText');
 rockBtn.addEventListener('click', () => playGame('rock'));
 paperBtn.addEventListener('click', () => playGame('paper'));
 scissorsBtn.addEventListener('click', () => playGame('scissors'));
+resetBtn.addEventListener('click', () => resetGame());
 
 buttons.forEach(button => {
     button.addEventListener('mousedown', () => {
@@ -72,11 +74,16 @@ function playGame(playerSelection) {
     roundDisplay.textContent = rounds.toString();
     rounds++;
 
+    highlightSelection(playerSelection, computerSelection);
+
     if (isGameOver()) {
         displayGameOverMessage(playerScore, computerScore);
         rockBtn.disabled = true;
+        rockBtn.classList.toggle('disable');
         paperBtn.disabled = true;
+        paperBtn.classList.toggle('disable');
         scissorsBtn.disabled = true;
+        scissorsBtn.classList.toggle('disable');
         gameOverSection.classList.toggle('hidden');
     }
 }
@@ -85,4 +92,32 @@ function isGameOver() {
     return playerScore === 5 || computerScore === 5;
 }
 
-// playGame();
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    rounds = 1;
+    playerScoreDisplay.textContent = playerScore.toString();
+    computerScoreDisplay.textContent = computerScore.toString();
+    roundDisplay.textContent = rounds.toString();
+    gameInfo.textContent = 'Make your move!';
+    rockBtn.disabled = false;
+    rockBtn.classList.toggle('disable');
+    paperBtn.disabled = false;
+    paperBtn.classList.toggle('disable');
+    scissorsBtn.disabled = false;
+    scissorsBtn.classList.toggle('disable');
+    gameOverSection.classList.toggle('hidden');
+}
+
+function highlightSelection(playerSelection, computerSelection) {
+    const playerSelectionBtn = document.querySelector(`#${playerSelection}Btn`);
+    const computerSelectionBtn = document.querySelector(`#${computerSelection}BtnCPU`);
+
+    playerSelectionBtn.style.boxShadow = '0 0 15px 2px blue';
+    computerSelectionBtn.style.boxShadow = '0 0 15px 2px red';
+
+    setTimeout(() => {
+        playerSelectionBtn.style.boxShadow = 'none';
+        computerSelectionBtn.style.boxShadow = 'none';
+    }, 1000);
+}
