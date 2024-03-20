@@ -123,5 +123,5 @@ function highlightSelection(playerSelection, computerSelection) {
     setTimeout(() => {
         playerSelectionBtn.style.boxShadow = 'none';
         computerSelectionBtn.style.boxShadow = 'none';
-    }, 1000);
+    }, 500);
 }
