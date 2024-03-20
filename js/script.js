@@ -51,18 +51,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function displayGameOverMessage(playerScore, computerScore) {
-    if (playerScore > computerScore) {
-        gameOverText.textContent = 'Congratulations! You won the game!';
-    }
-    else if (playerScore < computerScore) {
-        gameOverText.textContent = 'You lose the game, better luck next time!';
-    }
-    else {
-        gameOverText.textContent = `What a game! It's a tie!`;
-    }
-}
-
 function playGame(playerSelection) {
     const computerSelection = getComputerSelection();
 
@@ -77,19 +65,35 @@ function playGame(playerSelection) {
     highlightSelection(playerSelection, computerSelection);
 
     if (isGameOver()) {
-        displayGameOverMessage(playerScore, computerScore);
-        rockBtn.disabled = true;
-        rockBtn.classList.toggle('disable');
-        paperBtn.disabled = true;
-        paperBtn.classList.toggle('disable');
-        scissorsBtn.disabled = true;
-        scissorsBtn.classList.toggle('disable');
-        gameOverSection.classList.toggle('hidden');
+        handleGameOver();
     }
 }
 
 function isGameOver() {
     return playerScore === 5 || computerScore === 5;
+}
+
+function handleGameOver() {
+    displayGameOverMessage(playerScore, computerScore);
+    rockBtn.disabled = true;
+    rockBtn.classList.toggle('disable');
+    paperBtn.disabled = true;
+    paperBtn.classList.toggle('disable');
+    scissorsBtn.disabled = true;
+    scissorsBtn.classList.toggle('disable');
+    gameOverSection.classList.toggle('hidden');
+}
+
+function displayGameOverMessage(playerScore, computerScore) {
+    if (playerScore > computerScore) {
+        gameOverText.textContent = 'Congratulations! You won the game!';
+    }
+    else if (playerScore < computerScore) {
+        gameOverText.textContent = 'You lose the game, better luck next time!';
+    }
+    else {
+        gameOverText.textContent = `What a game! It's a tie!`;
+    }
 }
 
 function resetGame() {

@@ -165,11 +165,11 @@ body {
 
 .game-selections .selectable-btn:hover {
   opacity: 0.9;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .game-selections .selectable-btn:active {
-  transform: scale(0.95);
+  transform: scale(1);
   transition: all 0.2s ease;
 }
 
@@ -221,7 +221,7 @@ body {
 }
 
 .game-over .reset-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   opacity: 0.9;
 }
 
