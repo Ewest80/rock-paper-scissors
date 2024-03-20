@@ -92,7 +92,7 @@ body {
 /** Game Info */
 
 .game-info {
-  margin: 64px 0;
+  margin-bottom: 32px;
   text-align: center;
 }
 
@@ -109,6 +109,63 @@ body {
 .game-info .game-info-text {
   font-size: 32px;
   color: var(--clr-primary-light);
+}
+
+/** Game Selection */
+
+.game-selections {
+  margin: 32px 0;
+}
+
+.game-selections .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.game-selections .player-section,
+.game-selections .computer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.game-selections .player-btns,
+.game-selections .computer-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.game-selections .name {
+  font-size: 32px;
+  color: var(--clr-primary-dark);
+}
+
+.game-selections .selection-btn {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  background-color: var(--clr-primary-dark);
+  font-size: 72px;
+  border: 2px solid var(--clr-accent);
+}
+
+.game-selections .selectable-btn {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.game-selections .selectable-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+
+.game-selections .selected-btn:active {
+  transform: scale(0.95);
+  transition: all 0.3s ease;
 }
 
 
