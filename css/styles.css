@@ -89,6 +89,28 @@ body {
   font-weight: 700;
 }
 
+/** Game Info */
+
+.game-info {
+  margin: 64px 0;
+  text-align: center;
+}
+
+.game-info .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-primary-dark);
+  padding: 16px;
+  border-radius: 20px;
+  width: 50%;
+}
+
+.game-info .game-info-text {
+  font-size: 32px;
+  color: var(--clr-primary-light);
+}
+
 
 /** Containers */
 
