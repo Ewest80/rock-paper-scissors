@@ -168,9 +168,9 @@ body {
   transform: scale(1.1);
 }
 
-.game-selections .selected-btn:active {
+.game-selections .selectable-btn:active {
   transform: scale(0.95);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 /** Game over and reset */
