@@ -13,11 +13,17 @@
   --clr-accent: #f2cd3e;
 }
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   background-color: var(--clr-secondary-light);
+  margin-bottom: 100px;
 }
 
 .header {
@@ -220,7 +226,28 @@ body {
 }
 
 .hidden {
-  /*display: none;*/
+  display: none;
+}
+
+/** Footer */
+
+.footer {
+  background-color: var(--clr-primary-dark);
+  color: var(--clr-primary-light);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.footer p {
+  font-size: 20px;
 }
 
 /** Containers */
